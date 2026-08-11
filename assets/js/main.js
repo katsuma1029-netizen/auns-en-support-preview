@@ -1,5 +1,8 @@
 const translations = {
   ja: {
+    'meta.title': '大阪の登録支援機関 auns En_Support｜特定技能・海外採用・国内切替',
+    'meta.description': '大阪・吹田の登録支援機関 auns En_Support。インドネシアからの特定技能人材採用、日本国内での技能実習から特定技能への切替、生活・就労・定着まで西日本全域で支援します。',
+    'meta.ogDescription': 'インドネシアからの特定技能人材採用、日本国内での技能実習から特定技能への切替、生活・就労・定着まで西日本全域で支援します。',
     'nav.service': 'サービス',
     'nav.feature': '選ばれる理由',
     'nav.flow': 'ご利用の流れ',
@@ -98,6 +101,9 @@ const translations = {
     'footer.address': '〒564-0003 大阪府吹田市天道町4-24 En_TENDO'
   },
   en: {
+    'meta.title': 'auns En_Support | Registered Support Organization in Osaka',
+    'meta.description': 'auns En_Support is a registered support organization based in Suita, Osaka, supporting Specified Skilled Worker recruitment from Indonesia, domestic transitions in Japan, daily life, employment, and long-term retention across Western Japan.',
+    'meta.ogDescription': 'Support for Specified Skilled Worker recruitment from Indonesia, domestic transitions in Japan, daily life, employment, and long-term retention across Western Japan.',
     'nav.service': 'Services',
     'nav.feature': 'Why Us',
     'nav.flow': 'Process',
@@ -238,6 +244,18 @@ function applyLanguage(language) {
 
   currentLanguage = language;
   html.lang = language === 'ja' ? 'ja' : 'en';
+
+  document.title = dictionary['meta.title'];
+
+  const descriptionMeta = document.querySelector('meta[name="description"]');
+  const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+  const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+  const ogLocaleMeta = document.querySelector('meta[property="og:locale"]');
+
+  if (descriptionMeta) descriptionMeta.setAttribute('content', dictionary['meta.description']);
+  if (ogTitleMeta) ogTitleMeta.setAttribute('content', dictionary['meta.title']);
+  if (ogDescriptionMeta) ogDescriptionMeta.setAttribute('content', dictionary['meta.ogDescription']);
+  if (ogLocaleMeta) ogLocaleMeta.setAttribute('content', language === 'ja' ? 'ja_JP' : 'en_US');
 
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.dataset.i18n;
