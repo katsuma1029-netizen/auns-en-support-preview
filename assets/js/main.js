@@ -98,7 +98,43 @@ const translations = {
     'footer.representative': '代表',
     'footer.registration': '登録番号',
     'footer.representativeValue': '田中 良典',
-    'footer.address': '〒564-0003 大阪府吹田市天道町4-24 En_TENDO'
+    'footer.address': '〒564-0003 大阪府吹田市天道町4-24 En_TENDO',
+    'footer.privacy': 'プライバシーポリシー',
+    'privacy.meta.title': 'プライバシーポリシー｜auns En_Support',
+    'privacy.meta.description': 'auns En_Supportのプライバシーポリシーです。個人情報の取得、利用目的、管理、第三者提供、開示等の取扱いについてご案内します。',
+    'privacy.meta.ogDescription': 'auns En_Supportの個人情報の取扱いに関する方針をご案内します。',
+    'privacy.eyebrow': 'PRIVACY POLICY',
+    'privacy.title': 'プライバシーポリシー',
+    'privacy.intro': 'auns En_Support（以下「当機関」といいます。）は、個人情報の重要性を認識し、個人情報の保護に関する法令その他の関係法令を遵守するとともに、適切な管理および保護に努めます。',
+    'privacy.s1.title': '1. 個人情報の取得',
+    'privacy.s1.text': '当機関は、お問い合わせ、採用・受入れに関するご相談、各種支援業務その他当機関のサービス提供に必要な範囲で、氏名、所属先、電話番号、メールアドレスその他の個人情報を適正な方法で取得します。',
+    'privacy.s2.title': '2. 個人情報の利用目的',
+    'privacy.s2.lead': '取得した個人情報は、以下の目的で利用します。',
+    'privacy.s2.li1': 'お問い合わせ、ご相談への対応',
+    'privacy.s2.li2': '特定技能外国人の採用、受入れおよび支援に関する業務',
+    'privacy.s2.li3': '在留資格その他必要な手続きに関する連絡および支援',
+    'privacy.s2.li4': '受入企業、外国人材、提携機関その他の関係者との必要な連絡',
+    'privacy.s2.li5': '当機関のサービス運営および改善',
+    'privacy.s2.li6': '法令等に基づく対応',
+    'privacy.s3.title': '3. 個人情報の管理',
+    'privacy.s3.text': '当機関は、個人情報への不正アクセス、紛失、漏えい、改ざん等を防止するため、必要かつ適切な安全管理措置を講じます。',
+    'privacy.s4.title': '4. 個人データの第三者提供',
+    'privacy.s4.text1': '当機関は、本人の同意がある場合、法令に基づく場合、その他法令上認められる場合を除き、個人データを第三者へ提供しません。',
+    'privacy.s4.text2': '特定技能外国人の採用、受入れまたは支援のため、インドネシアを含む外国にある提携機関その他の関係者へ個人データを提供する必要がある場合は、関係法令に従い、必要な本人同意の取得や情報提供その他の適切な措置を講じます。',
+    'privacy.s5.title': '5. 業務委託',
+    'privacy.s5.text': '当機関は、業務遂行上必要な範囲で個人情報の取扱いを外部へ委託する場合があります。この場合、適切な委託先を選定し、必要かつ適切な監督を行います。',
+    'privacy.s6.title': '6. 開示・訂正・利用停止等',
+    'privacy.s6.text': '本人から、当機関が保有する個人情報について、開示、訂正、追加、削除、利用停止、消去、第三者提供の停止その他法令上認められる請求があった場合は、本人確認を行った上で、法令に従い適切に対応します。',
+    'privacy.s7.title': '7. 当ウェブサイトについて',
+    'privacy.s7.text1': '当ウェブサイトでは、表示言語の設定を保持するため、ブラウザのローカルストレージを使用しています。',
+    'privacy.s7.text2': '現在、当ウェブサイトでは広告配信を目的としたトラッキングツールを使用していません。',
+    'privacy.s8.title': '8. 本ポリシーの変更',
+    'privacy.s8.text': '当機関は、法令、サービス内容その他の変更に応じて、本ポリシーを変更することがあります。変更後の内容は、当ウェブサイトに掲載した時点から適用します。',
+    'privacy.s9.title': '9. お問い合わせ',
+    'privacy.s9.text': '個人情報の取扱いに関するお問い合わせは、以下までご連絡ください。',
+    'privacy.contact.name': 'auns En_Support',
+    'privacy.contact.address': '〒564-0003 大阪府吹田市天道町4-24 En_TENDO',
+    'privacy.effective': '制定日：2026年8月11日'
   },
   en: {
     'meta.title': 'auns En_Support | Registered Support Organization in Osaka',
@@ -199,7 +235,43 @@ const translations = {
     'footer.representative': 'Representative',
     'footer.registration': 'Registration No.',
     'footer.representativeValue': 'Yoshinori Tanaka',
-    'footer.address': 'En_TENDO, 4-24 Tendocho, Suita-shi, Osaka 564-0003, Japan'
+    'footer.address': 'En_TENDO, 4-24 Tendocho, Suita-shi, Osaka 564-0003, Japan',
+    'footer.privacy': 'Privacy Policy',
+    'privacy.meta.title': 'Privacy Policy | auns En_Support',
+    'privacy.meta.description': 'Privacy Policy of auns En_Support, covering the collection, use, management, disclosure, and handling of personal information.',
+    'privacy.meta.ogDescription': 'Learn how auns En_Support handles and protects personal information.',
+    'privacy.eyebrow': 'PRIVACY POLICY',
+    'privacy.title': 'Privacy Policy',
+    'privacy.intro': 'auns En_Support ("we," "us," or "our") recognizes the importance of personal information. We comply with applicable laws and regulations concerning the protection of personal information and take appropriate measures to manage and protect it.',
+    'privacy.s1.title': '1. Collection of Personal Information',
+    'privacy.s1.text': 'We collect names, company or organization names, telephone numbers, email addresses, and other personal information by appropriate means and only to the extent necessary to respond to inquiries, provide consultation regarding recruitment and acceptance, and provide our support services.',
+    'privacy.s2.title': '2. Purpose of Use',
+    'privacy.s2.lead': 'We use collected personal information for the following purposes:',
+    'privacy.s2.li1': 'Responding to inquiries and consultations',
+    'privacy.s2.li2': 'Recruitment, acceptance, and support of Specified Skilled Workers',
+    'privacy.s2.li3': 'Communication and support regarding status-of-residence and other required procedures',
+    'privacy.s2.li4': 'Necessary communication with host companies, international workers, partner organizations, and other relevant parties',
+    'privacy.s2.li5': 'Operation and improvement of our services',
+    'privacy.s2.li6': 'Compliance with applicable laws and regulations',
+    'privacy.s3.title': '3. Management of Personal Information',
+    'privacy.s3.text': 'We take necessary and appropriate security measures to help prevent unauthorized access, loss, leakage, alteration, and other improper handling of personal information.',
+    'privacy.s4.title': '4. Provision of Personal Data to Third Parties',
+    'privacy.s4.text1': 'We do not provide personal data to third parties except with the individual’s consent, when required by law, or when otherwise permitted under applicable laws and regulations.',
+    'privacy.s4.text2': 'When it is necessary to provide personal data to partner organizations or other relevant parties located outside Japan, including in Indonesia, for the recruitment, acceptance, or support of Specified Skilled Workers, we take appropriate measures required under applicable laws, including obtaining consent and providing required information where applicable.',
+    'privacy.s5.title': '5. Outsourcing',
+    'privacy.s5.text': 'We may outsource operations involving the handling of personal information when necessary for our business. In such cases, we select appropriate service providers and exercise necessary and appropriate supervision.',
+    'privacy.s6.title': '6. Disclosure, Correction, and Suspension of Use',
+    'privacy.s6.text': 'When an individual requests disclosure, correction, addition, deletion, suspension of use, erasure, suspension of third-party provision, or other action permitted by applicable law regarding personal information held by us, we verify the identity of the requester and respond appropriately in accordance with applicable laws and regulations.',
+    'privacy.s7.title': '7. About This Website',
+    'privacy.s7.text1': 'This website uses browser local storage to retain the selected display language.',
+    'privacy.s7.text2': 'We currently do not use tracking tools for advertising purposes on this website.',
+    'privacy.s8.title': '8. Changes to This Policy',
+    'privacy.s8.text': 'We may revise this Privacy Policy as necessary in response to changes in laws, our services, or other circumstances. The revised policy becomes effective when posted on this website.',
+    'privacy.s9.title': '9. Contact',
+    'privacy.s9.text': 'For inquiries regarding our handling of personal information, please contact us at:',
+    'privacy.contact.name': 'auns En_Support',
+    'privacy.contact.address': 'En_TENDO, 4-24 Tendocho, Suita-shi, Osaka 564-0003, Japan',
+    'privacy.effective': 'Established: August 11, 2026'
   }
 };
 
@@ -245,16 +317,22 @@ function applyLanguage(language) {
   currentLanguage = language;
   html.lang = language === 'ja' ? 'ja' : 'en';
 
-  document.title = dictionary['meta.title'];
+  const page = document.body.dataset.page || 'home';
+  const metaPrefix = page === 'privacy' ? 'privacy.meta' : 'meta';
+  const pageTitle = dictionary[`${metaPrefix}.title`];
+  const pageDescription = dictionary[`${metaPrefix}.description`];
+  const pageOgDescription = dictionary[`${metaPrefix}.ogDescription`];
+
+  if (pageTitle) document.title = pageTitle;
 
   const descriptionMeta = document.querySelector('meta[name="description"]');
   const ogTitleMeta = document.querySelector('meta[property="og:title"]');
   const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
   const ogLocaleMeta = document.querySelector('meta[property="og:locale"]');
 
-  if (descriptionMeta) descriptionMeta.setAttribute('content', dictionary['meta.description']);
-  if (ogTitleMeta) ogTitleMeta.setAttribute('content', dictionary['meta.title']);
-  if (ogDescriptionMeta) ogDescriptionMeta.setAttribute('content', dictionary['meta.ogDescription']);
+  if (descriptionMeta && pageDescription) descriptionMeta.setAttribute('content', pageDescription);
+  if (ogTitleMeta && pageTitle) ogTitleMeta.setAttribute('content', pageTitle);
+  if (ogDescriptionMeta && pageOgDescription) ogDescriptionMeta.setAttribute('content', pageOgDescription);
   if (ogLocaleMeta) ogLocaleMeta.setAttribute('content', language === 'ja' ? 'ja_JP' : 'en_US');
 
   document.querySelectorAll('[data-i18n]').forEach(element => {
