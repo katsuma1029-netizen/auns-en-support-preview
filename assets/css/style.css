@@ -299,8 +299,8 @@ img {
   display: inline-block;
   opacity: 0;
   transform: translateY(0.4em);
-  animation: heroCharRise 0.78s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(var(--char-index, 0) * 0.06s);
+  animation: heroCharRise 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--char-index, 0) * 0.10s);
   will-change: transform, opacity;
 }
 
@@ -312,7 +312,7 @@ img {
 }
 
 .hero-title.is-animated .hero-char--accent {
-  animation-duration: 0.9s;
+  animation-duration: 1.08s;
 }
 
 @keyframes heroCharRise {
@@ -1383,10 +1383,10 @@ img {
 
 .hero-network__bridge-dots {
   stroke: #5ab5c1;
-  stroke-width: 1.4;
+  stroke-width: 1.6;
   stroke-linecap: round;
-  stroke-dasharray: 1 9;
-  opacity: 0.45;
+  stroke-dasharray: 1 8;
+  opacity: 0.62;
 }
 
 .hero-network__en {
@@ -1452,15 +1452,15 @@ img {
 
 
 .hero-network.is-animated .hero-network__bridge-dots {
-  animation: bridgeFlow 14s linear infinite;
+  animation: bridgeFlow 8.5s linear infinite;
 }
 
 .hero-network.is-animated .hero-network__en {
-  animation: enBreath 9s ease-in-out infinite;
+  animation: enBreath 7s ease-in-out infinite;
 }
 
 .hero-network.is-animated .hero-network__node {
-  animation: nodeFloat 7.5s ease-in-out infinite;
+  animation: nodeFloat 5.8s ease-in-out infinite;
 }
 
 .hero-network__node::after {
@@ -1474,7 +1474,7 @@ img {
 }
 
 .hero-network.is-animated .hero-network__node::after {
-  animation: nodePulse 4.8s ease-out infinite;
+  animation: nodePulse 4.2s ease-out infinite;
 }
 
 .hero-network__node--id::after {
@@ -1497,12 +1497,12 @@ img {
     transform: scale(0.82);
   }
   12% {
-    opacity: 0.44;
+    opacity: 0.58;
   }
   70%,
   100% {
     opacity: 0;
-    transform: scale(1.55);
+    transform: scale(1.72);
   }
 }
 
@@ -1512,7 +1512,7 @@ img {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.06);
+    transform: scale(1.10);
   }
 }
 
@@ -1523,23 +1523,23 @@ img {
     transform: translateY(-1%);
   }
   50% {
-    opacity: 0.82;
-    transform: translateY(-1%) scale(1.018);
+    opacity: 0.72;
+    transform: translateY(-1%) scale(1.035);
   }
 }
 
 @keyframes orbitDriftA {
   0%, 100% { transform: translate(-50%, -50%) rotate(-28deg); }
-  50% { transform: translate(-50%, -50%) rotate(-24deg); }
+  50% { transform: translate(-50%, -50%) rotate(-20deg); }
 }
 
 @keyframes orbitDriftB {
   0%, 100% { transform: translate(-50%, -50%) rotate(27deg); }
-  50% { transform: translate(-50%, -50%) rotate(31deg); }
+  50% { transform: translate(-50%, -50%) rotate(35deg); }
 }
 
-.hero-network__orbit--teal { animation: orbitDriftA 16s ease-in-out infinite; }
-.hero-network__orbit--beige { animation: orbitDriftB 19s ease-in-out infinite; }
+.hero-network__orbit--teal { animation: orbitDriftA 12s ease-in-out infinite; }
+.hero-network__orbit--beige { animation: orbitDriftB 14s ease-in-out infinite; }
 
 #partner {
   background:
