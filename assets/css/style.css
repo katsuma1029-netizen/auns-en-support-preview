@@ -294,6 +294,38 @@ img {
   color: var(--teal);
 }
 
+
+.hero-title.is-animated .hero-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.4em);
+  animation: heroCharRise 0.78s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--char-index, 0) * 0.06s);
+  will-change: transform, opacity;
+}
+
+.hero-title.is-animated .hero-char--space {
+  display: inline;
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+.hero-title.is-animated .hero-char--accent {
+  animation-duration: 0.9s;
+}
+
+@keyframes heroCharRise {
+  0% {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-lead {
   margin: 0 0 16px;
   font-size: clamp(1.18rem, 2vw, 1.55rem);
@@ -1418,6 +1450,84 @@ img {
   color: var(--teal-dark);
 }
 
+
+.hero-network.is-animated .hero-network__bridge-dots {
+  animation: bridgeFlow 14s linear infinite;
+}
+
+.hero-network.is-animated .hero-network__en {
+  animation: enBreath 9s ease-in-out infinite;
+}
+
+.hero-network.is-animated .hero-network__node {
+  animation: nodeFloat 7.5s ease-in-out infinite;
+}
+
+.hero-network__node::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  opacity: 0;
+  transform: scale(0.82);
+}
+
+.hero-network.is-animated .hero-network__node::after {
+  animation: nodePulse 4.8s ease-out infinite;
+}
+
+.hero-network__node--id::after {
+  border-color: rgba(180,159,132,0.34);
+}
+
+.hero-network__node--jp::after {
+  border-color: rgba(23,143,160,0.34);
+  animation-delay: 2.4s;
+}
+
+@keyframes bridgeFlow {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -120; }
+}
+
+@keyframes nodePulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  12% {
+    opacity: 0.44;
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.55);
+  }
+}
+
+@keyframes nodeFloat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes enBreath {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(-1%);
+  }
+  50% {
+    opacity: 0.82;
+    transform: translateY(-1%) scale(1.018);
+  }
+}
+
 @keyframes orbitDriftA {
   0%, 100% { transform: translate(-50%, -50%) rotate(-28deg); }
   50% { transform: translate(-50%, -50%) rotate(-24deg); }
@@ -1569,7 +1679,18 @@ img {
   margin-top: 8px;
 }
 
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-title.is-animated .hero-char,
+  .hero-network.is-animated .hero-network__bridge-dots,
+  .hero-network.is-animated .hero-network__en,
+  .hero-network.is-animated .hero-network__node,
+  .hero-network.is-animated .hero-network__node::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .hero-network__orbit--teal,
   .hero-network__orbit--beige {
     animation: none !important;
