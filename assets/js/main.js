@@ -353,6 +353,83 @@ function applyLanguage(language) {
   languageSwitch.setAttribute('aria-label', language === 'ja' ? '英語表示に切り替える' : 'Switch to Japanese');
   menuButton.setAttribute('aria-label', language === 'ja' ? 'メニューを開く' : 'Open menu');
   localStorage.setItem('auns-language', language);
+
+  setupHeroTitleAnimation();
+
+  const heroCopy = document.querySelector('.hero-copy');
+  if (heroCopy && heroCopy.classList.contains('is-visible')) {
+    startHeroAnimations();
+  }
+}
+
+
+function buildHeroChars(root) {
+  let index = 0;
+
+  const processNode = node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const fragment = document.createDocumentFragment();
+      [...node.textContent].forEach(char => {
+        if (char === ' ') {
+          fragment.appendChild(document.createTextNode(char));
+          return;
+        }
+        const span = document.createElement('span');
+        span.className = 'hero-char';
+        span.style.setProperty('--char-index', index++);
+        span.textContent = char;
+        fragment.appendChild(span);
+      });
+      node.replaceWith(fragment);
+      return;
+    }
+
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+
+    if (node.classList.contains('hero-char')) return;
+
+    if (node.classList.contains('hero-en')) {
+      const text = node.textContent;
+      node.textContent = '';
+      [...text].forEach(char => {
+        const span = document.createElement('span');
+        span.className = 'hero-char hero-char--accent';
+        span.style.setProperty('--char-index', index++);
+        span.textContent = char;
+        node.appendChild(span);
+      });
+      return;
+    }
+
+    [...node.childNodes].forEach(processNode);
+  };
+
+  [...root.childNodes].forEach(processNode);
+}
+
+function setupHeroTitleAnimation() {
+  if (document.body.dataset.page !== 'home') return;
+  const heroTitle = document.querySelector('.hero-title');
+  if (!heroTitle) return;
+
+  heroTitle.classList.remove('is-animated');
+  buildHeroChars(heroTitle);
+}
+
+function startHeroAnimations() {
+  if (document.body.dataset.page !== 'home') return;
+
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) {
+    heroTitle.classList.remove('is-animated');
+    void heroTitle.offsetWidth;
+    heroTitle.classList.add('is-animated');
+  }
+
+  const heroNetwork = document.querySelector('.hero-network');
+  if (heroNetwork) {
+    heroNetwork.classList.add('is-animated');
+  }
 }
 
 languageSwitch.addEventListener('click', () => {
@@ -368,6 +445,9 @@ if ('IntersectionObserver' in window) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
+        if (entry.target.classList.contains('hero-copy')) {
+          startHeroAnimations();
+        }
         observer.unobserve(entry.target);
       }
     });
@@ -376,4 +456,5 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach(element => observer.observe(element));
 } else {
   revealElements.forEach(element => element.classList.add('is-visible'));
+  startHeroAnimations();
 }
