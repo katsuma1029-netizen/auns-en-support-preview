@@ -279,7 +279,7 @@ const html = document.documentElement;
 const header = document.querySelector('.site-header');
 const menuButton = document.getElementById('menuButton');
 const mobileMenu = document.getElementById('mobileMenu');
-const languageSwitch = document.getElementById('languageSwitch');
+const languageSwitches = document.querySelectorAll('[data-language-switch]');
 
 function updateHeaderState() {
   header.classList.toggle('scrolled', window.scrollY > 20);
@@ -345,12 +345,16 @@ function applyLanguage(language) {
     if (dictionary[key] !== undefined) element.innerHTML = dictionary[key];
   });
 
-  const currentLabel = document.querySelector('[data-lang-label="current"]');
-  const nextLabel = document.querySelector('[data-lang-label="next"]');
-  currentLabel.textContent = language === 'ja' ? 'JP' : 'EN';
-  nextLabel.textContent = language === 'ja' ? 'EN' : 'JP';
+  document.querySelectorAll('[data-lang-label="current"]').forEach(label => {
+    label.textContent = language === 'ja' ? 'JP' : 'EN';
+  });
+  document.querySelectorAll('[data-lang-label="next"]').forEach(label => {
+    label.textContent = language === 'ja' ? 'EN' : 'JP';
+  });
 
-  languageSwitch.setAttribute('aria-label', language === 'ja' ? '英語表示に切り替える' : 'Switch to Japanese');
+  languageSwitches.forEach(button => {
+    button.setAttribute('aria-label', language === 'ja' ? '英語表示に切り替える' : 'Switch to Japanese');
+  });
   menuButton.setAttribute('aria-label', language === 'ja' ? 'メニューを開く' : 'Open menu');
   localStorage.setItem('auns-language', language);
 
@@ -432,8 +436,10 @@ function startHeroAnimations() {
   }
 }
 
-languageSwitch.addEventListener('click', () => {
-  applyLanguage(currentLanguage === 'ja' ? 'en' : 'ja');
+languageSwitches.forEach(button => {
+  button.addEventListener('click', () => {
+    applyLanguage(currentLanguage === 'ja' ? 'en' : 'ja');
+  });
 });
 
 applyLanguage(currentLanguage);
