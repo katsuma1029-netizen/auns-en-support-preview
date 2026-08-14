@@ -41,12 +41,12 @@
       </nav>
 
       <div class="header-actions">
-        <button class="language-switch" type="button" id="languageSwitch" aria-label="表示言語を切り替える">
+        <button class="language-switch header-language-switch" type="button" id="languageSwitch" data-language-switch aria-label="表示言語を切り替える">
           <span class="lang-active" data-lang-label="current">JP</span>
           <span class="lang-divider">/</span>
           <span data-lang-label="next">EN</span>
         </button>
-        <a class="button button-small desktop-contact" href="index.html#contact" data-i18n="nav.contact">お問い合わせ</a>
+        <a class="button button-small header-contact" href="index.html#contact" data-i18n="nav.contact">お問い合わせ</a>
         <button class="menu-button" type="button" id="menuButton" aria-label="メニューを開く" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -54,13 +54,22 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <nav aria-label="モバイルナビゲーション">
-        <a href="index.html#service" data-i18n="nav.service">サービス</a>
-        <a href="index.html#feature" data-i18n="nav.feature">選ばれる理由</a>
-        <a href="index.html#flow" data-i18n="nav.flow">ご利用の流れ</a>
-        <a href="index.html#price" data-i18n="nav.price">料金</a>
-        <a href="index.html#contact" data-i18n="nav.contact">お問い合わせ</a>
-      </nav>
+      <div class="mobile-menu__inner">
+        <div class="mobile-menu__language">
+          <button class="language-switch mobile-language-switch" type="button" data-language-switch aria-label="表示言語を切り替える">
+            <span class="lang-active" data-lang-label="current">JP</span>
+            <span class="lang-divider">/</span>
+            <span data-lang-label="next">EN</span>
+          </button>
+        </div>
+        <nav aria-label="モバイルナビゲーション">
+          <a href="index.html#service" data-i18n="nav.service">サービス</a>
+          <a href="index.html#feature" data-i18n="nav.feature">選ばれる理由</a>
+          <a href="index.html#flow" data-i18n="nav.flow">ご利用の流れ</a>
+          <a href="index.html#price" data-i18n="nav.price">料金</a>
+        </nav>
+        <a class="button mobile-menu__contact" href="index.html#contact" data-i18n="nav.contact">お問い合わせ</a>
+      </div>
     </div>
   </header>
 
