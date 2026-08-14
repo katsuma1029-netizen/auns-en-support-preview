@@ -1042,16 +1042,20 @@ img {
   .mobile-menu {
     display: block;
     position: fixed;
-    inset: var(--header-height) 0 0;
-    z-index: 999;
-    padding: 30px 24px;
-    background: rgba(255,255,255,0.985);
+    top: var(--header-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 990;
+    padding: 18px 24px 30px;
+    background: #ffffff;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .mobile-menu.is-open {
@@ -1064,26 +1068,44 @@ img {
   .mobile-menu__inner {
     width: min(100%, 640px);
     margin-inline: auto;
+    padding-top: 4px;
   }
 
   .mobile-menu nav {
     display: grid;
     gap: 0;
+    border-top: 1px solid var(--line);
   }
 
   .mobile-menu nav a {
-    display: block;
-    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 68px;
+    padding: 0 4px;
     border-bottom: 1px solid var(--line);
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .mobile-menu nav a::after {
+    content: "→";
+    color: var(--teal);
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-menu nav a:hover::after {
+    transform: translateX(4px);
   }
 
   .mobile-menu__contact {
     display: flex;
     width: 100%;
-    margin-top: 28px;
-    min-height: 54px;
+    margin-top: 24px;
+    min-height: 56px;
     font-size: 0.98rem;
   }
 
@@ -1258,14 +1280,14 @@ img {
   .mobile-menu__language {
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--line);
+    min-height: 44px;
+    padding-bottom: 4px;
   }
 
   .mobile-language-switch {
     display: inline-flex;
     align-items: center;
-    padding: 8px 0;
+    padding: 6px 0;
   }
 
   .hero-meta {
