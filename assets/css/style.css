@@ -210,6 +210,15 @@ img {
   gap: 16px;
 }
 
+.header-contact {
+  white-space: nowrap;
+}
+
+.mobile-language-switch,
+.mobile-menu__contact {
+  display: none;
+}
+
 .language-switch {
   border: 0;
   background: transparent;
@@ -1000,9 +1009,18 @@ img {
     height: 58px;
   }
 
-  .desktop-nav,
-  .desktop-contact {
+  .desktop-nav {
     display: none;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .header-contact {
+    min-height: 40px;
+    padding-inline: 16px;
+    font-size: 0.78rem;
   }
 
   .menu-button {
@@ -1022,21 +1040,30 @@ img {
   }
 
   .mobile-menu {
+    display: block;
     position: fixed;
     inset: var(--header-height) 0 0;
     z-index: 999;
     padding: 30px 24px;
-    background: rgba(255,255,255,0.98);
+    background: rgba(255,255,255,0.985);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translateY(-10px);
     transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+    overflow-y: auto;
   }
 
   .mobile-menu.is-open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: none;
+  }
+
+  .mobile-menu__inner {
+    width: min(100%, 640px);
+    margin-inline: auto;
   }
 
   .mobile-menu nav {
@@ -1044,11 +1071,20 @@ img {
     gap: 0;
   }
 
-  .mobile-menu a {
+  .mobile-menu nav a {
+    display: block;
     padding: 20px 0;
     border-bottom: 1px solid var(--line);
     font-size: 1.1rem;
     font-weight: 700;
+  }
+
+  .mobile-menu__contact {
+    display: flex;
+    width: 100%;
+    margin-top: 28px;
+    min-height: 54px;
+    font-size: 0.98rem;
   }
 
   .hero {
@@ -1196,6 +1232,40 @@ img {
 @media (max-width: 520px) {
   .language-switch {
     font-size: 0.72rem;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .header-language-switch {
+    display: none;
+  }
+
+  .header-contact {
+    min-height: 38px;
+    padding-inline: 12px;
+    font-size: 0.72rem;
+    border-radius: 7px;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .mobile-menu__language {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-language-switch {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 0;
   }
 
   .hero-meta {
@@ -2766,5 +2836,32 @@ img {
 
   .legal-effective {
     text-align: left;
+  }
+}
+
+
+/* V10.6: persistent contact CTA and mobile navigation fix */
+@media (max-width: 390px) {
+  .header-inner {
+    width: min(calc(100% - 16px), 1360px);
+    gap: 6px;
+  }
+
+  .brand {
+    gap: 6px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-wordmark strong {
+    font-size: 0.8rem;
+  }
+
+  .header-contact {
+    padding-inline: 10px;
+    font-size: 0.68rem;
   }
 }
