@@ -872,7 +872,7 @@ img {
 }
 
 .site-footer {
-  padding: 70px 0 26px;
+  padding: 48px 0 24px;
   background: #1f1e1d;
   color: rgba(255,255,255,0.72);
 }
@@ -880,28 +880,31 @@ img {
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 24px;
 }
 
 .footer-grid--simple {
-  justify-items: end;
+  justify-items: center;
 }
 
 .footer-links {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-  font-size: 0.9rem;
-  line-height: 1.8;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px 30px;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .footer-links--compact {
-  min-width: 220px;
-  justify-items: start;
+  width: 100%;
+  min-width: 0;
 }
 
 .footer-links a {
-  color: rgba(255,255,255,0.84);
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
 }
 
 .footer-links a:hover,
@@ -910,13 +913,14 @@ img {
 }
 
 .footer-bottom {
-  margin-top: 32px;
+  margin-top: 28px;
   padding-top: 18px;
   border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
 }
 
 .footer-bottom small {
-  font-size: 0.74rem;
+  font-size: 0.78rem;
 }
 
 .reveal {
@@ -1253,17 +1257,20 @@ img {
   }
 
   .footer-grid {
-    gap: 22px;
+    gap: 20px;
   }
 
   .footer-grid--simple {
-    justify-items: start;
+    justify-items: center;
   }
 
   .footer-links,
   .footer-links--compact {
+    width: 100%;
     min-width: 0;
-    font-size: 0.88rem;
+    justify-content: center;
+    gap: 14px 20px;
+    font-size: 0.95rem;
   }
 }
 
@@ -3010,7 +3017,7 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 @media (max-width: 700px) {
