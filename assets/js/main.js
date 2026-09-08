@@ -468,3 +468,86 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach(element => element.classList.add('is-visible'));
   startHeroAnimations();
 }
+
+/* =========================================================
+   V10.14 refinements: active nav + staggered reveal
+   ========================================================= */
+
+function setupRevealStagger() {
+  if (document.body.dataset.page !== 'home') return;
+
+  const groups = [
+    '.service-grid',
+    '.support-routes',
+    '.feature-grid',
+    '.price-grid',
+    '.partner-grid'
+  ];
+
+  groups.forEach(selector => {
+    const group = document.querySelector(selector);
+    if (!group) return;
+
+    const items = group.querySelectorAll(':scope > .reveal');
+    items.forEach((item, index) => {
+      const delay = Math.min(index * 0.1, 0.3);
+      item.style.setProperty('--reveal-delay', `${delay}s`);
+    });
+  });
+}
+
+function setupActiveNavigation() {
+  if (document.body.dataset.page !== 'home') return;
+
+  const navLinks = [...document.querySelectorAll('.desktop-nav a[href^="#"]')];
+  if (!navLinks.length) return;
+
+  const items = navLinks
+    .map(link => {
+      const id = link.getAttribute('href').slice(1);
+      const section = document.getElementById(id);
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (!items.length) return;
+
+  let ticking = false;
+
+  const update = () => {
+    const headerHeight = header ? header.offsetHeight : 0;
+    const marker = window.scrollY + headerHeight + window.innerHeight * 0.22;
+    let activeItem = null;
+
+    items.forEach(item => {
+      const top = item.section.offsetTop;
+      const bottom = top + item.section.offsetHeight;
+      if (marker >= top && marker < bottom) activeItem = item;
+    });
+
+    items.forEach(item => {
+      const isActive = item === activeItem;
+      item.link.classList.toggle('is-active', isActive);
+      if (isActive) {
+        item.link.setAttribute('aria-current', 'location');
+      } else {
+        item.link.removeAttribute('aria-current');
+      }
+    });
+
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  };
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  requestUpdate();
+}
+
+setupRevealStagger();
+setupActiveNavigation();
