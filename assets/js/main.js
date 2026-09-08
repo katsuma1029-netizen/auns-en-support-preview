@@ -477,20 +477,20 @@ function setupRevealStagger() {
   if (document.body.dataset.page !== 'home') return;
 
   const groups = [
-    '.service-grid',
-    '.support-routes',
-    '.feature-grid',
-    '.price-grid',
-    '.partner-grid'
+    { selector: '.service-grid', step: 0.24, max: 0.72 },
+    { selector: '.price-grid', step: 0.28, max: 0.56 },
+    { selector: '.support-routes', step: 0.14, max: 0.28 },
+    { selector: '.feature-grid', step: 0.14, max: 0.28 },
+    { selector: '.partner-grid', step: 0.16, max: 0.32 }
   ];
 
-  groups.forEach(selector => {
+  groups.forEach(({ selector, step, max }) => {
     const group = document.querySelector(selector);
     if (!group) return;
 
     const items = group.querySelectorAll(':scope > .reveal');
     items.forEach((item, index) => {
-      const delay = Math.min(index * 0.1, 0.3);
+      const delay = Math.min(index * step, max);
       item.style.setProperty('--reveal-delay', `${delay}s`);
     });
   });
